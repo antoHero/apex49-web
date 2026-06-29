@@ -15,11 +15,12 @@ export class EmailService {
         last_name: string,
         reference: string,
         service: string,
-        createdAt: Date,
+        createdAt: Date | string,
+        currency: string,
         project_description: string,
         budget?: string | null,
     ): Promise<void> {
-        return this.quoteHandler.sendConfirmationEmail(email, last_name, reference, service, createdAt, project_description, budget);
+        return this.quoteHandler.sendConfirmationEmail(email, last_name, reference, service, createdAt, currency, project_description, budget);
     }
 }
 
