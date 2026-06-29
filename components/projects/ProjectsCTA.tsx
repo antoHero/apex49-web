@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ProjectsCTA() {
     return (
         <section className="flex w-full flex-col items-center px-6 py-32 text-center">
@@ -6,9 +8,9 @@ export default function ProjectsCTA() {
                 extraordinary visual narratives.
             </h2>
 
-            <button className="font-abel bg-[#111111] px-10 py-4 text-sm tracking-widest text-white uppercase transition-colors hover:bg-black">
+            <Link href="/request-quote" className="font-abel bg-[#111111] px-10 py-4 text-sm tracking-widest text-white uppercase transition-colors hover:bg-black">
                 Request For Quote
-            </button>
+            </Link>
         </section>
     );
 }

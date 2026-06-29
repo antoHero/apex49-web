@@ -7,6 +7,7 @@ import { Button } from "./ui/button";
 import { Spinner } from "./ui/spinner";
 import Link from "next/link";
 import { toast } from "sonner";
+import emailService from "@/utils/services/email";
 
 const schema = z.object({
     first_name: z.string().min(2, "Your first name is required"),

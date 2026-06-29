@@ -5,6 +5,7 @@ import React from 'react';
 import Link from 'next/link';
 import { NavItem } from '@/lib/types';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 function NavList({ items = [] }: { items: NavItem[] }) {
     // In production: const { url } = usePage();
@@ -50,9 +51,7 @@ export function NavLanding() {
                 {/* Logo - Left */}
                 <div className="flex-1">
                     <Link href="/" className="inline-block">
-                        <span className="font-satoshi text-2xl font-black tracking-tighter text-[#191919]">
-                            Apex49
-                        </span>
+                        <Image src="/images/logo-black.svg" className='w-[100px] h-[50px]' width={100} height={100} alt="logo" />
                     </Link>
                 </div>
 

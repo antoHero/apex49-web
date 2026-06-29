@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { supabase } from "@/utils/supabase";
 import { z } from "zod";
+import { generateReference, generateUnsubscribeToken } from "@/lib/utils";
+import { quoteEmailHandler } from "@/utils/emails/handlers/request-quote";
+
 
 const contactSchema = z.object({
   first_name: z.string().min(2, "Your first name is required"),
@@ -42,22 +45,64 @@ export async function POST(req: Request) {
       project_description,
     } = body;
 
-    const { error } = await supabase.from("contact_messages").insert({
-      first_name,
-      last_name,
-      service,
-      email,
-      currency,
-      budget,
-      project_description,
-    });
+    const reference = generateReference();
+    const unsubscribe_token = generateUnsubscribeToken();
+
+    const { error, data: row } = await supabase
+      .from("quote_requests")
+      .insert({
+        first_name,
+        last_name,
+        service,
+        email,
+        currency,
+        budget,
+        project_description,
+        reference,
+        unsubscribe_token,
+      })
+      .select()
+      .single();
 
     if (error) {
-      return NextResponse.json({ error: error.message, message: error.message }, { status: 500 });
+      return NextResponse.json(
+        { error: error.message, message: error.message },
+        { status: 500 },
+      );
     }
 
-    return NextResponse.json({ success: true, message: 'Quote requested successfully, we will get back to you as soon as possible' }, { status: 201 });
+    try {
+      await quoteEmailHandler.sendConfirmationEmail(
+        row.email,
+        row.last_name,
+        row.reference,
+        row.service,
+        row.createdAt,
+        row.unsubscribe_token,
+        row.currency,
+        row.project_description,
+        row.budget
+      );
+    } catch (emailErr) {
+      console.error("Email delivery failed:", emailErr);
+    }
+
+    return NextResponse.json(
+      {
+        success: true,
+        message:
+          "Quote requested successfully, we will get back to you as soon as possible",
+        data: row,
+      },
+      { status: 201 },
+    );
   } catch {
-    return NextResponse.json({ error: "Invalid JSON body", message: 'Something happened, please try again' }, { status: 400 });
+    return NextResponse.json(
+      {
+        error: "Invalid JSON body",
+        message: "Something happened, please try again",
+      },
+      { status: 400 },
+    );
   }
 }

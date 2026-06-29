@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import { ArrowIcon } from './home/selected-works';
+import Link from 'next/link';
 
 export function NavFooter() {
     return (
@@ -35,11 +37,12 @@ export function NavFooter() {
                 <div className="grid grid-cols-1 gap-12 pb-[160px] md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
                     {/* Widget-1: Logo & Text */}
                     <div className="flex max-w-[664px] flex-col gap-[14px] lg:col-span-6">
-                        <div className="py-[10.48px] pb-[6.88px]">
-                            <span className="font-jaini text-[32px] leading-[24px]">
+                        <Link href="/" className="py-[10.48px] pb-[6.88px]">
+                            {/* <span className="font-jaini text-[32px] leading-[24px]">
                                 Apex49
-                            </span>
-                        </div>
+                            </span> */}
+                            <Image src="/images/logo-white.svg" className='w-auto h-[150px]' width={100} height={100} alt="logo" />
+                        </Link>
                         <p className="font-body max-w-[288px] text-[16px] leading-[24px] font-medium opacity-80">
                             At Apex 49 Technologies, we believe that design goes
                             beyond just creating a visually appealing product
