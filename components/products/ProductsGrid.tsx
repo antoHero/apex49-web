@@ -13,11 +13,11 @@ interface Product {
 const products: Product[] = [
     {
         tag: 'SAAS',
-        title: 'Inventory Management App',
+        title: 'Retaile',
         description:
             'A powerful inventory system designed for warehouses, retail stores, and businesses to track stock, manage suppliers, monitor purchases, and optimize inventory operations in real time.',
         href: '#',
-        image: '/images/ngn-sme.jpg',
+        image: '/images/retaile.png',
         imageAlt: 'Inventory Management App',
     },
     {
@@ -58,14 +58,14 @@ function ProductCard({ product }: { product: Product }) {
                 </p>
 
                 <div
-                    className="group/link mt-2 flex w-fit items-center gap-2 transition-opacity hover:opacity-70"
+                    className="group/link mt-2 flex w-fit border-1 border-[#00000026] rounded-[6px] py-[10px] px-[24px] items-center gap-2 transition-opacity hover:opacity-70"
                 >
                     <span className="font-body text-[16px] font-medium text-[#191919]">
                        Coming soon
                     </span>
-                    <div className="transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1">
+                    {/* <div className="transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1">
                         <ArrowIcon />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

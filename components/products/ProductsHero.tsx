@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductsHero() {
@@ -41,7 +41,7 @@ export default function ProductsHero() {
                 {/* Right: Image */}
                 <div className="w-full lg:h-[600px] lg:w-[600px] lg:flex-shrink-0">
                     <div className="group relative h-[400px] w-full overflow-hidden rounded-[6px] lg:h-full">
-                        <Image
+                        <img
                             src="/images/products-hero.jpg"
                             alt="Team collaborating"
                             className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"

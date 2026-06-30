@@ -1,14 +1,14 @@
 // import Image from 'next/image';
 import { ArrowIcon } from './home/selected-works';
 import Link from 'next/link';
-import { jaini } from '@/lib/fonts';
+
 export function NavFooter() {
     return (
         <footer className="w-full bg-[#191919] text-white">
             {/* Section-padding: 80px Top/Bottom, 56px Left/Right */}
-            <div className="mx-auto flex max-w-[1460px] flex-col gap-[13px] px-6 py-20 lg:px-[56px]">
+            <div className="mx-auto flex max-w-[1460px] flex-col gap-[13px] px-6 py-12 lg:px-[56px]">
                 {/* Footer-call-out: Bottom border 10% opacity */}
-                <div className="mb-[80px] flex flex-col gap-12 border-b border-[#E4E4E4]/10 pb-4 md:pb-[65px] lg:flex-row lg:items-end lg:justify-between lg:gap-[365px]">
+                <div className="mb-[40px] flex flex-col gap-12 border-b border-[#E4E4E4]/10 pb-4 md:pb-[65px] lg:flex-row lg:items-end lg:justify-between lg:gap-[365px]">
                     {/* Heading-1: Let's get Started */}
                     <div className="flex max-w-[656px] flex-col">
                         <h2 className="font-body text-[60px] leading-none font-medium uppercase lg:leading-[116px]">
