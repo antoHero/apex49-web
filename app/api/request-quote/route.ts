@@ -3,6 +3,7 @@ import { supabase } from "@/utils/supabase";
 import { z } from "zod";
 import { generateReference, generateUnsubscribeToken } from "@/lib/utils";
 import { quoteEmailHandler } from "@/utils/emails/handlers/request-quote";
+import { verifyTurnstile } from "nextjs-turnstile";
 
 
 const contactSchema = z.object({
@@ -43,7 +44,17 @@ export async function POST(req: Request) {
       currency,
       budget,
       project_description,
+      token,
     } = body;
+
+    const isValid = await verifyTurnstile(token);
+  
+    if (!isValid) {
+      return NextResponse.json(
+        { error: "CAPTCHA verification failed" },
+        { status: 400 }
+      );
+    }
 
     const reference = generateReference();
     const unsubscribe_token = generateUnsubscribeToken();

@@ -169,16 +169,25 @@ export default function AboutStory() {
                                 <span className='text-[#191919] text-[22px] font-regular'>Co-Founder & Chief Technology Officer</span>
 
                                 <div className="flex gap-2 mt-2">
-                                    <a href="https://x.com/Iam_Veecktor" target='_blank' className="flex items-center justify-center border border-black h-[40px] w-[40px] rounded-sm">
-                                        <Image 
+                                    <a href="https://x.com/Iam_Veecktor" target='_blank' className="flex items-center justify-center border border-black h-[40px] w-[40px] rounded-sm hover:bg-black hover:text-white">
+                                        {/* <Image 
                                             src="/images/x-logo-black.png" 
                                             alt="X logo"
                                             className='h-[14px] w-[14px]' 
                                             width={14} 
                                             height={14} 
-                                        />
+                                        /> */}
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_832_24" style={{maskType: "luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
+                                            <path d="M0 0H14V14H0V0Z" fill="white"/>
+                                            </mask>
+                                            <g mask="url(#mask0_832_24)">
+                                            <path d="M11.025 0.656006H13.172L8.482 6.03001L14 13.344H9.68L6.294 8.90901L2.424 13.344H0.275L5.291 7.59401L0 0.657006H4.43L7.486 4.71001L11.025 0.656006ZM10.27 12.056H11.46L3.78 1.87701H2.504L10.27 12.056Z" fill="black"/>
+                                            </g>
+                                            </svg>
+
                                     </a>
-                                    <a href="https://www.linkedin.com/in/akoke-anto" target='_blank' className="flex items-center justify-center bg-black border border-black h-[40px] w-[40px] rounded-sm">
+                                    <a href="https://www.linkedin.com/in/akoke-anto" target='_blank' className="flex items-center justify-center hover:bg-black border border-black h-[40px] w-[40px] rounded-sm">
                                         <Image 
                                             src="/linkedin.png" 
                                             alt="LinkedIn logo" 

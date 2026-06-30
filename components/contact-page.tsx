@@ -7,7 +7,9 @@ import { Button } from "./ui/button";
 import { Spinner } from "./ui/spinner";
 import Link from "next/link";
 import { toast } from "sonner";
-import emailService from "@/utils/services/email";
+import { Turnstile } from 'nextjs-turnstile';
+import { useState } from "react";
+
 
 const schema = z.object({
     first_name: z.string().min(2, "Your first name is required"),
@@ -16,6 +18,7 @@ const schema = z.object({
     email: z.email("Please enter a valid email address"),
     currency: z.string("Please select your preferred currency"),
     budget: z.string(),
+    turnstileToken: z.string(),
     project_description: z
         .string()
         .min(10, "Message must be at least 10 characters"),
@@ -37,6 +40,9 @@ type ApiError = {
 type ApiResponse = ApiSuccess | ApiError;
 
 export default function ContactPage() {
+    const [token, setToken] = useState<string | null>(null);
+    const [status, setStatus] = useState<string>('');
+
     const {
         register,
         handleSubmit,
@@ -56,8 +62,16 @@ export default function ContactPage() {
         return decimal.length ? `${integer}.${decimal.join("")}` : integer;
     };
 
+    register('turnstileToken', { required: 'Please complete the CAPTCHA.' });
+
+
     const onSubmit = async (data: FormValues) => {
         clearErrors();
+
+        if (! token) {
+            toast.error('Please complete the CAPTCHA.')
+            return;
+        }
 
         try {
             const res = await fetch("/api/request-quote", {
@@ -355,6 +369,20 @@ export default function ContactPage() {
                                 </Link>
                             </span>
                         </div>
+                                
+                        <Turnstile 
+                            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!} 
+                            onSuccess={(token) => {
+                                setValue('turnstileToken', token);
+                                clearErrors('turnstileToken');
+                                setToken(token)
+                            }}
+                            onExpire={() => {
+                                setValue('turnstileToken', '')
+                                setToken(null)
+                            }}
+                            onError={() => setValue('turnstileToken', '')}
+                        />
                         {/* Submit Button */}
                         <Button
                             disabled={isSubmitting}
@@ -369,6 +397,11 @@ export default function ContactPage() {
                                 "Send message"
                             )}
                         </Button>
+                        {errors.turnstileToken && (
+                            <p className="mt-1 text-xs text-red-500">
+                                {errors.turnstileToken.message}
+                            </p>
+                        )}
                     </form>
                 </div>
             </div>
