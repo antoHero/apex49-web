@@ -18,10 +18,10 @@ export const metadata: Metadata = buildMetadata({
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <JsonLd />
       <HeroSection />
-      <div className="md:mt-32 w-full">
+      <div className="md:mt-32">
         <SpecTicker />
       </div>
 

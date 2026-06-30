@@ -9,8 +9,9 @@ export function VortexGraphic() {
                     src="/images/office-hero.jpg"
                     className="h-[508px] w-auto object-cover grayscale transition-all duration-500 hover:grayscale-0"
                     alt="Team collaboration"
-                    width={508}
-                    height={508}
+                    fill
+                    priority
+                    quality={100}
                 />
             </div>
         </div>
