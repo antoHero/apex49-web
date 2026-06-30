@@ -3,7 +3,7 @@ import { ArrowIcon } from './home/selected-works';
 
 export default function RequestQuote() {
     return (
-        <div className="mx-auto flex w-full max-w-[1420px] flex-col items-center justify-between gap-6 border-t border-[#E4E4E4] pt-[37px] pb-[36px] md:flex-row md:gap-[865px]">
+        <div className="mx-auto flex w-full md:max-w-[1420px] flex-col items-start md:items-center justify-start md:justify-between gap-6 border-t border-[#E4E4E4] md:pt-[37px] py-4 md:pb-[36px] md:flex-row md:gap-[865px]">
             {/* div.action-text */}
             <div className="flex flex-col">
                 <span className="font-abel text-[20.64px] leading-[31.2px] whitespace-nowrap text-[#111111]">

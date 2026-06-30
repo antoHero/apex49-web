@@ -1,4 +1,5 @@
 // import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductsHero() {
@@ -29,7 +30,7 @@ export default function ProductsHero() {
                     <div className="flex items-center gap-4">
                         <Link
                             href="#products"
-                            className="flex h-[44px] items-center justify-center border border-[#000000] bg-[#000000] px-6 text-white transition-colors hover:bg-black/90"
+                            className="flex h-[44px] rounded-[6px] items-center justify-center border border-[#000000] bg-[#000000] px-6 text-white transition-colors hover:opacity-80 hover:bg-black/90"
                         >
                             <span className="font-body text-[16px] font-medium leading-[150%] text-white">
                                 Explore our Products
@@ -41,12 +42,13 @@ export default function ProductsHero() {
                 {/* Right: Image */}
                 <div className="w-full lg:h-[600px] lg:w-[600px] lg:flex-shrink-0">
                     <div className="group relative h-[400px] w-full overflow-hidden rounded-[6px] lg:h-full">
-                        <img
+                        <Image
                             src="/images/products-hero.jpg"
                             alt="Team collaborating"
                             className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
-                            width={100}
-                            height={100}
+                            fill
+                            priority
+                            quality={95}
                         />
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import { ArrowIcon } from '@/components/home/selected-works';
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface Product {
@@ -36,10 +37,13 @@ function ProductCard({ product }: { product: Product }) {
         <div className="flex flex-col border border-[#E4E4E4]">
             {/* Image */}
             <div className="group relative h-[300px] overflow-hidden lg:h-[380px]">
-                <img
+                <Image
                     src={product.image}
                     alt={product.imageAlt}
                     className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                    fill
+                    priority
+                    quality={95}
                 />
             </div>
 
@@ -58,7 +62,7 @@ function ProductCard({ product }: { product: Product }) {
                 </p>
 
                 <div
-                    className="group/link mt-2 flex w-fit border-1 border-[#00000026] rounded-[6px] py-[10px] px-[24px] items-center gap-2 transition-opacity hover:opacity-70"
+                    className="group/link mt-2 flex w-fit border-1 border-[#00000026] rounded-[6px] h-[44px] px-6 items-center gap-2 transition-opacity hover:opacity-70"
                 >
                     <span className="font-body text-[16px] font-medium text-[#191919]">
                        Coming soon

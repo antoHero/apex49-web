@@ -141,7 +141,7 @@ export function SelectedWorks() {
                                 brand identity, product goals, and values.
                             </p>
 
-                            <Link href="/projects" className="group flex h-[56px] cursor-pointer items-center justify-center rounded-[6px] bg-[#191919] px-[17px] py-[7.4px] text-white transition-all duration-300 hover:bg-black/90">
+                            <Link href="/projects" className="group flex h-[44px] cursor-pointer items-center justify-center rounded-[6px] bg-[#191919] px-6 text-white transition-all duration-300 hover:bg-black hover:opacity-80">
                                 <span className="font-abel text-[18px] leading-[21.08px]">
                                     View all projects
                                 </span>

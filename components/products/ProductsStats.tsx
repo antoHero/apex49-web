@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ProductsStats() {
     return (
         <section className="mx-auto w-full max-w-[1440px] px-6 py-[72px] lg:px-[80px]">
@@ -44,10 +46,13 @@ export default function ProductsStats() {
                 <div className="flex flex-1 flex-col gap-8">
                     {/* Image */}
                     <div className="group relative h-[270px] w-full overflow-hidden rounded-[6px]">
-                        <img
+                        <Image
                             src="/images/stat1.jpg"
                             alt="Team at work"
                             className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                            fill
+                            priority
+                            quality={95}
                         />
                     </div>
 
@@ -88,10 +93,13 @@ export default function ProductsStats() {
 
                     {/* Image */}
                     <div className="group relative h-[270px] w-full overflow-hidden rounded-[6px]">
-                        <img
+                        <Image
                             src="/images/stat2.jpg"
                             alt="Collaboration"
                             className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                            fill
+                            priority
+                            quality={95}
                         />
                     </div>
                 </div>

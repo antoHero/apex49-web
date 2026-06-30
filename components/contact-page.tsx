@@ -386,7 +386,7 @@ export default function ContactPage() {
                         {/* Submit Button */}
                         <Button
                             disabled={isSubmitting}
-                            className="font-satoshi flex h-[56px] w-full cursor-pointer items-center justify-center rounded-[6px] bg-[#111111] text-[15.75px] font-light text-white transition-colors hover:bg-black"
+                            className="font-satoshi flex h-[56px] w-full cursor-pointer items-center justify-center rounded-[6px] bg-[#111111] text-[15.75px] font-light text-white transition-colors hover:opacity-80 hover:bg-black"
                         >
                             {isSubmitting ? (
                                 <>

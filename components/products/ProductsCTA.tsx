@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductsCTA() {
@@ -15,7 +16,7 @@ export default function ProductsCTA() {
 
                 <Link
                     href="/request-quote"
-                    className="flex h-[44px] items-center justify-center border border-[#000000] bg-[#000000] px-6 text-white transition-colors hover:bg-black/90"
+                    className="flex h-[44px] items-center justify-center border border-[#000000] bg-[#000000] rounded-[6px] px-6 text-white transition-colors hover:opacity-80 hover:bg-black/90"
                 >
                     <span className="font-body text-[16px] font-medium leading-[150%] text-white">
                         Start a Project →
@@ -25,10 +26,13 @@ export default function ProductsCTA() {
 
             {/* Full-width dark image */}
             <div className="group relative h-[400px] w-full overflow-hidden rounded-[6px] lg:h-[520px]">
-                <img
+                <Image
                     src="/images/product_cta.jpg"
                     alt="Team collaborating on a project"
                     className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                    fill
+                    priority
+                    quality={95}
                 />
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-black/30" />

@@ -46,7 +46,7 @@ export function HeroSection() {
               faster, and more securely.
             </p>
 
-            <Link href="/request-quote" className="flex items-center justify-center font-abel text-[18px] leading-[21.08px] h-[56px] min-w-[185px] rounded-[6px] cursor-pointer bg-[#191919] px-[16px] py-[8px] text-white transition-all duration-300 hover:bg-black/90">
+            <Link href="/request-quote" className="flex items-center justify-center font-abel text-[18px] leading-[21.08px] h-[44px] min-w-[185px] rounded-[6px] cursor-pointer bg-[#191919] px-6 text-white transition-all duration-300 hover:opacity-80 hover:bg-black">
               {/* <span className="">
                 Contact Us
               </span> */}

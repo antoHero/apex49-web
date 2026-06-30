@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import RequestQuote from '../RequestQuote';
 
 export default function AboutHero() {
