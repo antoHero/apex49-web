@@ -143,13 +143,13 @@ export default function Testimonials() {
                 <div className="flex gap-[10px]">
                     <button
                         onClick={prevSlide}
-                        className="flex h-[50px] w-[50px] items-center justify-center bg-[#111111] transition-opacity hover:opacity-80"
+                        className="flex h-[50px] w-[50px] items-center justify-center rounded-[6px] bg-[#111111] transition-opacity hover:opacity-80"
                     >
                         <ArrowLeft />
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="flex h-[50px] w-[50px] items-center justify-center bg-[#111111] transition-opacity hover:opacity-80"
+                        className="flex h-[50px] w-[50px] items-center justify-center rounded-[6px] bg-[#111111] transition-opacity hover:opacity-80"
                     >
                         <ArrowRight />
                     </button>

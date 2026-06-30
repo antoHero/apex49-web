@@ -342,15 +342,15 @@ export default function ContactPage() {
                         <div className="flex items-center justify-start">
                             <span className="text-xs text-[#0B1B3D]">
                                 By proceeding, you agree to our{" "}
-                                <Link href="#" className="underline">
+                                <Link href="/legal#terms-of-service" className="underline">
                                     Terms & Conditions
                                 </Link>
                                 {", "}
-                                <Link href="#" className="underline">
+                                <Link href="/legal#privacy-policy" className="underline">
                                     Privacy Policy
                                 </Link>{" "}
                                 and our{" "}
-                                <Link href="#" className="underline">
+                                <Link href="/legal#refund-policy" className="underline">
                                     Refund Policy
                                 </Link>
                             </span>
@@ -358,7 +358,7 @@ export default function ContactPage() {
                         {/* Submit Button */}
                         <Button
                             disabled={isSubmitting}
-                            className="font-satoshi flex h-[56px] w-full cursor-pointer items-center justify-center rounded-[1600px] bg-[#111111] text-[15.75px] font-light text-white transition-colors hover:bg-black"
+                            className="font-satoshi flex h-[56px] w-full cursor-pointer items-center justify-center rounded-[6px] bg-[#111111] text-[15.75px] font-light text-white transition-colors hover:bg-black"
                         >
                             {isSubmitting ? (
                                 <>

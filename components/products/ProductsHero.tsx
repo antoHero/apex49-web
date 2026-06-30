@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductsHero() {
@@ -16,7 +17,7 @@ export default function ProductsHero() {
                         </h1>
 
                         <p className="font-body text-[18px] leading-[150%] text-[#000000]">
-                            At Apex 49 Technologies, we build and own digital
+                            At Apex 49 Digital Limited, we build and own digital
                             products designed to solve real operational and
                             business challenges. Our solutions are scalable,
                             secure, and crafted to help organizations work
@@ -40,10 +41,12 @@ export default function ProductsHero() {
                 {/* Right: Image */}
                 <div className="w-full lg:h-[600px] lg:w-[600px] lg:flex-shrink-0">
                     <div className="group relative h-[400px] w-full overflow-hidden rounded-[6px] lg:h-full">
-                        <img
+                        <Image
                             src="/images/products-hero.jpg"
                             alt="Team collaborating"
                             className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                            width={100}
+                            height={100}
                         />
                     </div>
                 </div>

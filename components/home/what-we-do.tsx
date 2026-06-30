@@ -19,9 +19,9 @@ const ServiceItem = ({ title }: { title: string }) => (
                 {title}
             </h3>
 
-            <div className="flex h-[50px] w-[14px] items-center justify-center">
+            {/* <div className="flex h-[50px] w-[14px] items-center justify-center">
                 <PlusIcon />
-            </div>
+            </div> */}
         </div>
     </div>
 );

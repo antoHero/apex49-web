@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 interface Portfolio {
     title: string;
     category: string;
-    href?: string;
+    href: string;
 }
 
 export const ArrowIcon = () => (
@@ -51,12 +53,14 @@ export const ArrowIcon = () => (
 const ServiceItem = ({
     title,
     category,
+    link
 }: {
     title: string;
     category: string;
+    link: string;
 }) => (
     <div className="w-full border-t border-[#E4E4E4] pt-[1px]">
-        <div className="group flex w-full cursor-pointer flex-col items-center gap-8 py-[48px] transition-colors hover:bg-gray-50/50 lg:flex-row lg:gap-[103px]">
+        <Link href={link} target="_blank" className="group flex w-full cursor-pointer flex-col items-center gap-8 py-[48px] transition-colors hover:bg-gray-50/50 lg:flex-row lg:gap-[103px]">
             {/* Title Section: Responsive font sizes and width */}
             <div className="w-full flex-shrink-0 lg:w-1/2">
                 <h4 className="font-body truncate text-left text-[24px] leading-[32px] font-medium text-[#191919] uppercase md:text-[30.75px]">
@@ -80,7 +84,7 @@ const ServiceItem = ({
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     </div>
 );
 
@@ -89,22 +93,22 @@ export function SelectedWorks() {
         {
             title: 'Sabiebook',
             category: 'Web Design',
-            href: '/v/project/sabiebook',
+            href: 'https://sabiebook.com',
         },
         {
             title: 'VENNDOR',
-            category: 'Branding',
-            href: '/v/project/venndor',
+            category: 'Software Development',
+            href: 'https://tickets.thevenndor.com',
         },
         {
             title: 'HEYKARA',
             category: 'Mobile Development',
-            href: '/v/project/heykara',
+            href: 'https://heykara.com',
         },
         {
             title: 'CAREBRIDGE',
-            category: 'Web Development',
-            href: '/v/project/carebridge',
+            category: 'Software Development',
+            href: 'https://carebridge.ng',
         },
     ];
 
@@ -125,8 +129,8 @@ export function SelectedWorks() {
                     <div className="flex flex-col lg:flex-row lg:items-start lg:gap-[368px]">
                         <div className="w-full pb-[18.34px] lg:w-[640px]">
                             <h2 className="font-body text-[39.84px] leading-[52px] font-normal tracking-tight text-[#191919]">
-                                With Apex 49, your goals aren't just realized –
-                                they're reimagined with strong designs and
+                                With Apex 49, your goals aren&apos;t just realized –
+                                they&apos;re reimagined with strong designs and
                                 visuals.
                             </h2>
                         </div>
@@ -137,11 +141,11 @@ export function SelectedWorks() {
                                 brand identity, product goals, and values.
                             </p>
 
-                            <button className="group flex h-[56px] cursor-pointer items-center justify-center bg-[#191919] px-[17px] py-[7.4px] text-white transition-all duration-300 hover:bg-black/90">
+                            <Link href="/projects" className="group flex h-[56px] cursor-pointer items-center justify-center rounded-[6px] bg-[#191919] px-[17px] py-[7.4px] text-white transition-all duration-300 hover:bg-black/90">
                                 <span className="font-abel text-[18px] leading-[21.08px]">
                                     View all projects
                                 </span>
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -153,6 +157,7 @@ export function SelectedWorks() {
                         key={index}
                         title={service.title}
                         category={service.category}
+                        link={service.href}
                     />
                 ))}
             </div>

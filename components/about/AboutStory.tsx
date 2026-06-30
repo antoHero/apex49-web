@@ -133,8 +133,8 @@ export default function AboutStory() {
             <StorySection
                 number="01"
                 label="Our story"
-                heading="Apex 49 Technologies grew from a 25-year friendship between Victor Akoke Anto, a Full-Stack Developer, and Hope Vinam Jonah, a Product Designer with an architecture background. Combining Victor’s technical expertise and Hope’s human-centered design approach, they created Apex 49 to deliver digital solutions that are both functional and impactful. Supported by an experienced Advisory Board, the company emphasizes partnership, long-term thinking, and helping organizations operate at their best."
-                subtext="At Apex 49 Technologies, we believe that design goes beyond just creating a visually appealing product. It is about understanding the essence of your brand and crafting a story that captures it in a unique and"
+                heading="Apex 49 Digital Limited grew from a 25-year friendship between Victor Akoke Anto, a Full-Stack Developer, and Hope Vinam Jonah, a Product Designer with an architecture background. Combining Victor’s technical expertise and Hope’s human-centered design approach, they created Apex 49 to deliver digital solutions that are both functional and impactful. Supported by an experienced Advisory Board, the company emphasizes partnership, long-term thinking, and helping organizations operate at their best."
+                subtext="At Apex 49 Digital Limited, we believe that design goes beyond just creating a visually appealing product. It is about understanding the essence of your brand and crafting a story that captures it in a unique and"
                 image="/images/hope-victor.png"
             />
 
@@ -196,7 +196,7 @@ export default function AboutStory() {
             <StorySection
                 number="04"
                 label="Who We Serve"
-                heading="Apex 49 Technologies works with:"
+                heading="Apex 49 Digital Limited works with:"
                 footerText="We understand the importance of accountability, structure and long-term partnerships."
             >
                 <ServiceList

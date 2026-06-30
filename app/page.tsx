@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <div className="mt-32 w-full">
+      <div className="md:mt-32 w-full">
         <SpecTicker />
       </div>
 

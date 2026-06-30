@@ -26,7 +26,7 @@ const products: Product[] = [
         description:
             'A complete school management platform that helps schools manage students, teachers, attendance, classes, examinations, results, and parent communication seamlessly.',
         href: '#',
-        image: '/images/school.jpg',
+        image: '/images/landing-school.png',
         imageAlt: 'School Management System',
     },
 ];
@@ -57,17 +57,16 @@ function ProductCard({ product }: { product: Product }) {
                     {product.description}
                 </p>
 
-                <Link
-                    href={product.href}
+                <div
                     className="group/link mt-2 flex w-fit items-center gap-2 transition-opacity hover:opacity-70"
                 >
                     <span className="font-body text-[16px] font-medium text-[#191919]">
-                        View Product
+                       Coming soon
                     </span>
                     <div className="transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1">
                         <ArrowIcon />
                     </div>
-                </Link>
+                </div>
             </div>
         </div>
     );

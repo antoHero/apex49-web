@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { VortexGraphic } from "./vortex-graphic";
 
 export function HeroSection() {
@@ -39,17 +40,18 @@ export function HeroSection() {
 
           <div className="flex max-w-[595px] flex-col items-start gap-5">
             <p className="font-body text-[18px] leading-[27px] tracking-[-0.02em] text-[#191919] opacity-90">
-              At Apex 49 Technology, innovation meets precision. We design and
+              At Apex 49 Digital Limited, innovation meets precision. We design and
               build modern digital infrastructure, software systems and powerful
               technology solutions that help organizations operate smarter,
               faster, and more securely.
             </p>
 
-            <button className="h-[56px] min-w-[185px] cursor-pointer bg-[#191919] px-[16px] py-[8px] text-white transition-all duration-300 hover:bg-black/90">
-              <span className="font-abel text-[18px] leading-[21.08px]">
+            <Link href="/request-quote" className="flex items-center justify-center font-abel text-[18px] leading-[21.08px] h-[56px] min-w-[185px] rounded-[6px] cursor-pointer bg-[#191919] px-[16px] py-[8px] text-white transition-all duration-300 hover:bg-black/90">
+              {/* <span className="">
                 Contact Us
-              </span>
-            </button>
+              </span> */}
+              Contact Us
+            </Link>
           </div>
         </div>
       </div>
