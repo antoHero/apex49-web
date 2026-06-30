@@ -1,10 +1,47 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from 'next/font/local'
 import "./globals.css";
 import { NavLanding } from "@/components/nav-landing";
 import { NavFooter } from "@/components/nav-footer";
 import { Toaster } from 'sonner';
 import { jaini } from "@/lib/fonts";
+import { buildMetadata, DEFAULT_SEO } from "@/config/seo.config";
+
+export const metadata: Metadata = {
+  ...buildMetadata(),
+
+  // Title template — page titles become "Page Name | Apex 49"
+  title: {
+      default: DEFAULT_SEO.title,
+      template: `%s | ${DEFAULT_SEO.siteName}`,
+  },
+
+  // Verification tokens — add yours from Google / Bing Search Console
+  verification: {
+      // google: "YOUR_GOOGLE_VERIFICATION_TOKEN",
+      // other: { "msvalidate.01": "YOUR_BING_TOKEN" },
+  },
+
+  // Icons
+  icons: {
+      icon: [
+          { url: "/favicon.ico" },
+          { url: "/icon-16.png", sizes: "16x16", type: "image/png" },
+          { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+      shortcut: "/favicon.ico",
+  },
+
+  manifest: "/site.webmanifest",
+};
+
+export const viewport: Viewport = {
+  themeColor: DEFAULT_SEO.themeColor,
+  colorScheme: "light",
+  width: "device-width",
+  initialScale: 1,
+};
 
 const satoshi = localFont({
   src: [
@@ -72,10 +109,10 @@ const satoshi = localFont({
 // });
 
 
-export const metadata: Metadata = {
-  title: "Apex 49 Digital",
-  description: "We design and build modern digital infrastructure, software systems and powerful technology solutions that help organizations operate smarter, faster, and more securely.",
-};
+// export const metadata: Metadata = {
+//   title: "Apex 49 Digital",
+//   description: "We design and build modern digital infrastructure, software systems and powerful technology solutions that help organizations operate smarter, faster, and more securely.",
+// };
 
 export default function RootLayout({
   children,
