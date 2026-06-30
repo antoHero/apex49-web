@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
       <p className="text-[16px] text-[#525252]">Last updated: 2026:06:30</p>
 
       <p className="mt-6">
-        At Apex49 Digital Limited, we are committed to protecting your privacy
+        At Apex 49 Digital Limited, we are committed to protecting your privacy
         and handling your personal data with transparency and care. This Privacy
         Policy explains what information we collect, how we use it, and your
         rights in relation to it. By using our services, you agree to the
@@ -127,7 +127,7 @@ export default function PrivacyPolicy() {
         </li>
         <li>
           <span className="font-bold">Client Collaboration: </span> Certain
-          profile and project information may be shared between Apex49 Digital Limited
+          profile and project information may be shared between Apex 49 Digital Limited
           team members and authorised client contacts to facilitate service
           delivery.
         </li>
@@ -297,7 +297,7 @@ export default function PrivacyPolicy() {
             <a className="tel:+2349033723909">+2349033723909</a>
           </li>
           <li>
-            <span className="font-bold">Company: </span> Apex49 Digital Limited
+            <span className="font-bold">Company: </span> Apex 49 Digital Limited
           </li>
         </ul>
       </div>

@@ -5,7 +5,7 @@ export default function RefundPolicy() {
       <p className="text-[16px] text-[#525252]">Last updated: 2026:06:30</p>
 
       <p className="mt-6">
-        At Apex49 Digital Limited, we are committed to delivering high-quality
+        At Apex 49 Digital Limited, we are committed to delivering high-quality
         digital services and ensuring client satisfaction. We understand that
         circumstances can change, and this Refund Policy outlines the conditions
         under which refunds may be requested and processed. By engaging our
@@ -21,7 +21,7 @@ export default function RefundPolicy() {
         <p className=" text-[18px] mt-4">
           Due to the nature of digital agency services — which involve the
           investment of time, creative resources, and third-party costs from the
-          outset — all payments made to Apex49 Digital Limited are generally
+          outset — all payments made to Apex 49 Digital Limited are generally
           non-refundable once work has commenced. However, we are committed to
           resolving concerns fairly and in good faith. We encourage all clients
           to raise concerns early so we have the opportunity to address them
@@ -42,14 +42,14 @@ export default function RefundPolicy() {
             <span className="font-bold text-[18px]">
               Service Not Commenced:{" "}
             </span>
-            If you have made a payment and Apex49 Digital Limited has not yet
+            If you have made a payment and Apex 49 Digital Limited has not yet
             begun work on your project, you may be eligible for a full refund.
             Requests must be submitted within 7 days of payment.
           </li>
           <li>
             {" "}
             <span className="font-bold text-[18px]">Failure to Deliver: </span>
-            If Apex49 Digital Limited fails to deliver the agreed services or
+            If Apex 49 Digital Limited fails to deliver the agreed services or
             deliverables within a mutually agreed timeline and no reasonable
             resolution has been reached, a partial or full refund may be issued
             at our discretion.
@@ -64,7 +64,7 @@ export default function RefundPolicy() {
           <li>
             {" "}
             <span className="font-bold text-[18px]">
-              Service Cancellation by Apex49 Digital Limited:{" "}
+              Service Cancellation by Apex 49 Digital Limited:{" "}
             </span>
             If we cancel a project or service for reasons within our control and
             not attributable to the client, a proportionate refund will be
@@ -108,7 +108,7 @@ export default function RefundPolicy() {
             Fees paid to third-party platforms, tools, advertising networks, or
             service providers on the client’s behalf (e.g., ad spend, domain
             registrations, software licences). These costs are non-recoverable
-            by Apex49 Digital Limited.
+            by Apex 49 Digital Limited.
           </li>
           <li>
             Retainer or monthly service fees where services have been rendered
@@ -158,7 +158,7 @@ export default function RefundPolicy() {
           </li>
         </ul>
         <span className=" text-[18px]">
-          Completion percentage will be determined by Apex49 Digital Limited
+          Completion percentage will be determined by Apex 49 Digital Limited
           based on work completed at the time of cancellation notice, and will
           be communicated to the client in writing.
         </span>
@@ -247,7 +247,7 @@ export default function RefundPolicy() {
           </li>
         </ul>
         <span className=" text-[18px]">
-          Apex49 Digital Limited is not responsible for delays caused by
+          Apex 49 Digital Limited is not responsible for delays caused by
           third-party payment processors or financial institutions. We will
           provide you with a confirmation once a refund has been initiated.
         </span>
@@ -283,7 +283,7 @@ export default function RefundPolicy() {
           9. Amendments to This Policy
         </h2>
         <p className=" text-[18px] mt-4">
-          Apex49 Digital Limited reserves the right to update or amend this
+          Apex 49 Digital Limited reserves the right to update or amend this
           Refund Policy at any time. The “Effective Date” at the top of this
           document reflects the most recent revision. Any changes will apply to
           services purchased after the updated Policy is published. We will
@@ -314,7 +314,7 @@ export default function RefundPolicy() {
             <a className="tel:+2349033723909">+2349033723909</a>
           </li>
           <li>
-            <span className="font-bold">Company: </span> Apex49 Digital Limited
+            <span className="font-bold">Company: </span> Apex 49 Digital Limited
           </li>
         </ul>
       </div>

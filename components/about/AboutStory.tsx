@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const LabelArrow = () => (
@@ -82,7 +84,7 @@ const StorySection: React.FC<StorySectionProps> = ({
                     <img
                         src={image}
                         alt={label}
-                        className="aspect-[885/590] h-full w-full object-cover object-center"
+                        className="aspect-[885/590] h-full w-full object-cover object-center grayscale hover:grayscale-0"
                     />
                 </div>
             ) : null}
@@ -133,9 +135,112 @@ export default function AboutStory() {
             <StorySection
                 number="01"
                 label="Our story"
-                heading="Apex 49 Digital Limited grew from a 25-year friendship between Victor Akoke Anto, a Full-Stack Developer, and Hope Vinam Jonah, a Product Designer with an architecture background. Combining Victor’s technical expertise and Hope’s human-centered design approach, they created Apex 49 to deliver digital solutions that are both functional and impactful. Supported by an experienced Advisory Board, the company emphasizes partnership, long-term thinking, and helping organizations operate at their best."
+                heading="Apex 49 Digital Limited grew from a 25-year friendship between Akoke Victor Anto, a Full-Stack Developer, and Hope Vinam Jonah, a Product Designer with an architecture background. Combining Victor’s technical expertise and Hope’s human-centered design approach, they created Apex 49 to deliver digital solutions that are both functional and impactful. Supported by an experienced Advisory Board, the company emphasizes partnership, long-term thinking, and helping organizations operate at their best."
                 subtext="At Apex 49 Digital Limited, we believe that design goes beyond just creating a visually appealing product. It is about understanding the essence of your brand and crafting a story that captures it in a unique and"
-                image="/images/hope-victor.png"
+                gallery={
+                    <div className="font-satoshi grid grid-cols-1 gap-[10px] md:grid-cols-2">
+                        <div className="flex flex-col gap-10px rounded-[6.4px] border-1 border-[#D9D9D9]">
+                            
+                            <div className="relative w-auto h-[365px] overflow-hidden">
+                                <div className="relative h-[362px] w-full overflow-hidden bg-[#D9D9D9]">
+                                    <Image
+                                        src="/images/akoke.png"
+                                        alt="Akoke Victor Anto"
+                                        fill
+                                        priority
+                                        quality={100}
+                                        sizes="(max-width: 768px) 100vw, 400px"
+                                        className="
+                                            object-cover
+                                            object-[center_8%]
+                                            scale-[1.0]
+                                            origin-top
+                                            transition-all
+                                            duration-500
+                                            hover:grayscale
+                                        "
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="p-6 space-y-2">
+                                <h1 className='font-adamina text-black text-[28px] font-regular'>Anto Akoke Victor</h1>
+
+                                <span className='text-[#191919] text-[22px] font-regular'>Co-Founder & Chief Technology Officer</span>
+
+                                <div className="flex gap-2 mt-2">
+                                    <a href="https://x.com/Iam_Veecktor" target='_blank' className="flex items-center justify-center border border-black h-[40px] w-[40px] rounded-sm">
+                                        <Image 
+                                            src="/images/x-logo-black.png" 
+                                            alt="X logo"
+                                            className='h-[14px] w-[14px]' 
+                                            width={14} 
+                                            height={14} 
+                                        />
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/akoke-anto" target='_blank' className="flex items-center justify-center bg-black border border-black h-[40px] w-[40px] rounded-sm">
+                                        <Image 
+                                            src="/linkedin.png" 
+                                            alt="LinkedIn logo" 
+                                            className='h-[14px] w-[14px]' 
+                                            width={14} 
+                                            height={14}
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-10px rounded-[6.4px] border-1 border-[#D9D9D9]">
+                            <div className="relative h-[362px] w-full overflow-hidden bg-[#D9D9D9]">
+                                <Image
+                                    src="/images/hope-jonah.png"
+                                    alt="Hope Vinam Jonah"
+                                    fill
+                                    priority
+                                    quality={100}
+                                    sizes="(max-width: 768px) 100vw, 400px"
+                                    className="
+                                        object-cover
+                                        object-[center_8%]
+                                        scale-[1.18]
+                                        origin-top
+                                        transition-all
+                                        duration-500
+                                        hover:grayscale
+                                    "
+                                />
+                            </div>
+                            
+
+                            <div className="p-6 space-y-2">
+                                <h1 className='font-adamina text-black text-[28px] font-regular'>Hope Vinam Jonah</h1>
+
+                                <span className='text-[#191919] text-[22px] font-regular'>Co-Founder & Head of Design and Research</span>
+
+                                <div className="flex gap-2 mt-2">
+                                    <Link href="https://x.com/vinamtech" className="flex items-center justify-center border border-black h-[40px] w-[40px] rounded-sm">
+                                        <Image 
+                                            src="/images/x-logo-black.png" 
+                                            alt="X logo"
+                                            className='h-[14px] w-[14px]' 
+                                            width={14} 
+                                            height={14} 
+                                        />
+                                    </Link>
+                                    <Link href="https://www.linkedin.com/in/vinamtech" className="flex items-center justify-center bg-black border border-black h-[40px] w-[40px] rounded-sm">
+                                        <Image 
+                                            src="/linkedin.png" 
+                                            alt="LinkedIn logo" 
+                                            className='h-[14px] w-[14px]' 
+                                            width={14} 
+                                            height={14}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
             />
 
             {/* 02 WHY APEX 49 */}
@@ -157,26 +262,26 @@ export default function AboutStory() {
                     <div className="grid grid-cols-1 gap-[10px] md:grid-cols-12">
                         <div className="aspect-[2/1.5] overflow-hidden rounded-[6.4px] bg-black md:col-span-8">
                             <img
-                                src="/images/web.png"
-                                className="h-full w-full object-cover grayscale"
-                                alt="Dashboard"
+                                src="/images/web.jpg"
+                                className="h-full w-full object-cover grayscale hover:grayscale-0"
+                                alt="Web Design"
                             />
                         </div>
                         <div className="flex flex-col gap-[10px] md:col-span-4">
                             <div className="aspect-square flex-1 overflow-hidden rounded-[6.4px] md:aspect-auto">
                                 <img
-                                    src="/images/mobile.png"
-                                    className="h-full w-full object-cover grayscale"
+                                    src="/images/mobile-development.jpg"
+                                    className="h-full w-full object-cover grayscale hover:grayscale-0"
                                     alt="Mobile App"
                                 />
                             </div>
-                            <div className="aspect-square flex-1 overflow-hidden rounded-[6.4px] md:aspect-auto">
+                            {/* <div className="aspect-square flex-1 overflow-hidden rounded-[6.4px] md:aspect-auto">
                                 <img
-                                    src="/images/branding.png"
-                                    className="h-full w-full object-cover grayscale"
+                                    src="/images/branding.jpg"
+                                    className="h-full w-full object-cover grayscale hover:grayscale-0"
                                     alt="Identity"
                                 />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 }
@@ -215,7 +320,7 @@ export default function AboutStory() {
                 label="Our Approach"
                 heading="We believe technology should feel clear, useful and dependable. That’s why our work is guided by three principles:"
                 footerText="Our goal is not just to deliver projects, but to create digital infrastructure that continues to deliver value over time"
-                image="/images/cube.png"
+                image="/images/branding.jpg"
             >
                 <div className="mt-6 flex flex-col gap-8">
                     <PrincipleBlock

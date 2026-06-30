@@ -56,14 +56,19 @@ export function NavFooter() {
                             Navigation
                         </span>
                         <ul className="flex flex-col gap-1">
-                            {['Home', 'Projects', 'About'].map((item) => (
-                                <li key={item}>
-                                    <a
-                                        href="#"
+                            {[
+                                {label: 'Home', href: '/'},
+                                {label: 'Projects', href: '/projects'}, 
+                                {label: 'Solutions', href: '/products'},
+                                {label: 'About', href: '/about'},
+                            ].map((item, index) => (
+                                <li key={index}>
+                                    <Link
+                                        href={item.href}
                                         className="font-body text-[20.64px] leading-[31.2px] font-normal transition-all hover:underline"
                                     >
-                                        {item}
-                                    </a>
+                                        {item.label}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -75,14 +80,19 @@ export function NavFooter() {
                             Social Media
                         </span>
                         <ul className="flex flex-col gap-1">
-                            {['Instagram', 'Facebook', 'X (Twitter)'].map(
-                                (item) => (
-                                    <li key={item}>
+                            {[
+                                {label: 'Instagram', href: 'https://www.instagram.com/apex49digital'}, 
+                                // 'Facebook', 
+                                {label: 'X (Twitter)', href: 'https://x.com/apex49digital'}
+                            ].map(
+                                (item, index) => (
+                                    <li key={index}>
                                         <a
-                                            href="#"
+                                            href={item.href}
+                                            target='_blank'
                                             className="font-body text-[20.64px] leading-[31.2px] font-normal transition-all hover:underline"
                                         >
-                                            {item}
+                                            {item.label}
                                         </a>
                                     </li>
                                 ),

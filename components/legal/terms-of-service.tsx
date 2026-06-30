@@ -6,7 +6,7 @@ export default function TermsOfService() {
 
       <p className="mt-6">
         These Terms of Use (“Terms”) govern your access to and use of the
-        websites, platforms, tools, and services (“Services”) provided by Apex49
+        websites, platforms, tools, and services (“Services”) provided by Apex 49
         Digital (“we,” “our,” or “us”). By accessing or using our Services, you
         agree to be bound by these Terms. If you do not agree, please do not use
         our Services.
@@ -68,7 +68,7 @@ export default function TermsOfService() {
           3. Digital Agency Services
         </h2>
         <p className=" text-[18px] mt-4">
-          Apex49 Digital Limited provides a range of digital services including but not
+          Apex 49 Digital Limited provides a range of digital services including but not
           limited to digital marketing, content creation, brand strategy, social
           media management, web development, SEO, paid advertising, and related
           consulting services. <br />
@@ -79,7 +79,7 @@ export default function TermsOfService() {
           <li className="">
             Project scopes, timelines, and deliverables will be defined in a
             separate service agreement or statement of work (“SOW”) agreed upon
-            between you and Apex49 Digital Limited.
+            between you and Apex 49 Digital Limited.
           </li>
           <li>
             You are responsible for providing accurate briefs, materials,
@@ -87,7 +87,7 @@ export default function TermsOfService() {
             may affect delivery schedules.
           </li>
           <li>
-            Apex49 Digital Limited retains the right to decline any project or content
+            Apex 49 Digital Limited retains the right to decline any project or content
             request that conflicts with our values, applicable laws, or these
             Terms.
           </li>
@@ -108,7 +108,7 @@ export default function TermsOfService() {
           4. Payments
         </h2>
         <p className=" text-[18px] mt-4">
-          Certain Services offered by Apex49 Digital Limited require payment. By making
+          Certain Services offered by Apex 49 Digital Limited require payment. By making
           a payment, you agree to the pricing, billing terms, and service
           description presented at the time of purchase or as set out in your
           service agreement. Transaction records such as amount, currency,
@@ -119,7 +119,7 @@ export default function TermsOfService() {
           and payment reversals are governed by our Refund Policy, which forms
           an integral part of these Terms. Except as expressly stated in the
           Refund Policy or required by applicable law, payments are
-          non-refundable. Clients are encouraged to contact Apex49 Digital Limited
+          non-refundable. Clients are encouraged to contact Apex 49 Digital Limited
           directly regarding billing concerns before initiating a chargeback.
           Unauthorised or fraudulent chargebacks may result in service
           suspension and submission of transaction evidence to payment
@@ -133,7 +133,7 @@ export default function TermsOfService() {
         </h2>
         <p className=" text-[18px] mt-4">
           The Services, including our website, platform content, branding,
-          features, and functionality, are owned by Apex49 Digital Limited or its
+          features, and functionality, are owned by Apex 49 Digital Limited or its
           licensors and are protected by applicable intellectual property laws.
           You receive a limited, non-exclusive, non-transferable licence to use
           the Services for their intended purpose only. Upon full payment and
@@ -141,7 +141,7 @@ export default function TermsOfService() {
           deliverables created specifically for you (e.g., custom designs,
           written content, or code) will transfer to you as agreed in your
           service agreement, unless otherwise stated. Pre-existing tools,
-          templates, frameworks, or proprietary methodologies used by Apex49
+          templates, frameworks, or proprietary methodologies used by Apex 49
           Digital remain our exclusive property. You may not reproduce,
           distribute, modify, create derivative works of, publicly display, or
           exploit any part of our Services or proprietary materials without our
@@ -238,14 +238,14 @@ export default function TermsOfService() {
           10. Limitation of Liability
         </h2>
         <p className=" text-[18px] mt-4">
-          TO THE FULLEST EXTENT PERMITTED BY LAW, APEX49 DIGITAL LIMITED AND ITS
+          TO THE FULLEST EXTENT PERMITTED BY LAW, APEX 49 DIGITAL LIMITED AND ITS
           AFFILIATES, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR
           ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES,
           OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR
           INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE
           LOSSES, RESULTING FROM YOUR ACCESS TO OR USE OF THE SERVICES. OUR
           TOTAL LIABILITY TO YOU FOR ANY CLAIM ARISING OUT OF THESE TERMS OR THE
-          SERVICES SHALL NOT EXCEED THE AMOUNT PAID BY YOU TO APEX49 DIGITAL LIMITED IN
+          SERVICES SHALL NOT EXCEED THE AMOUNT PAID BY YOU TO APEX 49 DIGITAL LIMITED IN
           THE THREE (3) MONTHS PRECEDING THE CLAIM.
         </p>
       </div>
@@ -255,7 +255,7 @@ export default function TermsOfService() {
           11. Indemnification
         </h2>
         <p className=" text-[18px] mt-4">
-          You agree to indemnify, defend, and hold harmless Apex49 Digital Limited and
+          You agree to indemnify, defend, and hold harmless Apex 49 Digital Limited and
           its affiliates, officers, directors, employees, and agents from and
           against any claims, liabilities, damages, losses, costs, and expenses
           (including reasonable legal fees) arising from or related to: (a) your
@@ -329,7 +329,7 @@ export default function TermsOfService() {
             <a className="tel:+2349033723909">+2349033723909</a>
           </li>
           <li>
-            <span className="font-bold">Company: </span> Apex49 Digital Limited
+            <span className="font-bold">Company: </span> Apex 49 Digital Limited
           </li>
         </ul>
       </div>
