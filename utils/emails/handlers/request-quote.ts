@@ -75,7 +75,7 @@ export class RequestQuoteHandler {
                 ? `
             <tr>
               <td style="padding: 14px 0 0 0; font-size: 15px; font-weight: 600; color: #0f172a;">Estimated amount:</td>
-              <td style="padding: 14px 0 0 0; font-size: 20px; font-weight: 700; color: #000000;" align="right">${budget}</td>
+              <td style="padding: 14px 0 0 0; font-size: 20px; font-weight: 700; color: #000000;" align="right">${currency} ${budget}</td>
             </tr>`
                 : ""
             }
