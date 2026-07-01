@@ -45,7 +45,7 @@ export default function Legal() {
   const currentTab = activeHash || "#privacy-policy";
 
   return (
-    <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-20">
+    <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-20 pt-24">
       <div className="flex items-center gap-2 pb-8">
         <Link
           href="/legal#privacy-policy"

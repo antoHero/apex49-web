@@ -14,7 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function projects() {
     return ( 
-        <div className="pb-24">
+        <div className="py-24">
             <PageJsonLd 
                 name="Our Works"
                 description="Custom web experiences built for performance and conversion."

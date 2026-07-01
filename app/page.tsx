@@ -18,7 +18,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden pt-24">
       <JsonLd />
       <HeroSection />
       <div className="md:mt-32">

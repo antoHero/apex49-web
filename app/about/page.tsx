@@ -12,7 +12,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function About() {
     return (
-        <div>
+        <div className="pt-24">
             <PageJsonLd
                 name="About us"
                 description="We design and build modern digital infrastructure, software systems and powerful technology solutions that help organizations operate smarter, faster, and more securely."

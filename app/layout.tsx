@@ -6,6 +6,7 @@ import { NavFooter } from "@/components/nav-footer";
 import { Toaster } from 'sonner';
 import { jaini } from "@/lib/fonts";
 import { buildMetadata, DEFAULT_SEO } from "@/config/seo.config";
+import { ChromeVisibility } from "@/components/layout/chrome-visibility";
 
 export const metadata: Metadata = {
   ...buildMetadata(),
@@ -116,9 +117,15 @@ export default function RootLayout({
       className={` ${jaini.variable} h-full antialiased`}
     >
       <body className={`${satoshi.className} relative flex min-h-screen flex-col overflow-x-hidden bg-white selection:bg-black selection:text-white`}>
-        <NavLanding />
-        <main className="flex-grow pt-24">{children}</main>
-        <NavFooter />
+        <ChromeVisibility>
+          <NavLanding />
+        </ChromeVisibility>
+        
+        <main className="flex-grow">{children}</main>
+        <ChromeVisibility>
+          <NavFooter />
+        </ChromeVisibility>
+        
         <Toaster richColors position="top-center" />
       </body>
     </html>
