@@ -103,16 +103,7 @@ const satoshi = localFont({
   ],
 })
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-
-// export const metadata: Metadata = {
-//   title: "Apex 49 Digital",
-//   description: "We design and build modern digital infrastructure, software systems and powerful technology solutions that help organizations operate smarter, faster, and more securely.",
-// };
+export const revalidate = 3600;
 
 export default function RootLayout({
   children,
