@@ -11,6 +11,7 @@ export function VortexGraphic() {
                     alt="Team collaboration"
                     fill
                     priority
+                    sizes="(max-width: 768px) 100vw, 400px"
                     quality={100}
                 />
             </div>

@@ -1,0 +1,12 @@
+name = "apex49-web"
+main = ".open-next/worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[[queues.producers]]
+queue = "email-queue"
+binding = "EMAIL_QUEUE"
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"

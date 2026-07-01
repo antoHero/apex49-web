@@ -108,18 +108,11 @@ export class RequestQuoteHandler {
   }
 }
 
-const username = process.env.NEXT_MAILTRAP_SMTP_USERNAME!;
-const password = process.env.NEXT_MAILTRAP_SMTP_PASSWORD!;
+export function createQuoteEmailHandler(env: { RESEND_API_KEY: string }) {
+  const transporter = new EmailTransporter({
+    apiKey: env.RESEND_API_KEY,
+    defaultFromAddress: "Apex49 Digital Limited <info@apex49.co>",
+  });
 
-// Quick sanity check for development
-if (!username || !password) {
-  console.warn("⚠️ SMTP Credentials are missing from environment variables!");
+  return new RequestQuoteHandler(transporter);
 }
-
-const mailerConfig = {
-  apiKey: process.env.NEXT_PUBLIC_RESEND_KEY || "",
-  defaultFromAddress: "Apex49 Digital Limited <info@apex49.co>",
-};
-
-export const emailTransporter = new EmailTransporter(mailerConfig);
-export const quoteEmailHandler = new RequestQuoteHandler(emailTransporter);

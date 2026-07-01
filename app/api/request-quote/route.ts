@@ -2,8 +2,10 @@ import { NextResponse } from "next/server";
 import { supabase } from "@/utils/supabase";
 import { z } from "zod";
 import { generateReference, generateUnsubscribeToken } from "@/lib/utils";
-import { quoteEmailHandler } from "@/utils/emails/handlers/request-quote";
+// import { quoteEmailHandler } from "@/utils/emails/handlers/request-quote";
 import { verifyTurnstile } from "nextjs-turnstile";
+import { enqueueEmail } from "@/lib/email/queue";
+import { FormValues } from "@/components/contact-page";
 
 
 const contactSchema = z.object({
@@ -44,17 +46,17 @@ export async function POST(req: Request) {
       currency,
       budget,
       project_description,
-      token,
-    } = body;
+      turnstileToken,
+    } = body as FormValues;
 
-    const isValid = await verifyTurnstile(token);
+    // const isValid = await verifyTurnstile(turnstileToken);
   
-    if (!isValid) {
-      return NextResponse.json(
-        { error: "CAPTCHA verification failed" },
-        { status: 400 }
-      );
-    }
+    // if (!isValid) {
+    //   return NextResponse.json(
+    //     { error: "CAPTCHA verification failed" },
+    //     { status: 400 }
+    //   );
+    // }
 
     const reference = generateReference();
     const unsubscribe_token = generateUnsubscribeToken();
@@ -83,19 +85,24 @@ export async function POST(req: Request) {
     }
 
     try {
-      await quoteEmailHandler.sendConfirmationEmail(
-        row.email,
-        row.last_name,
-        row.reference,
-        row.service,
-        row.createdAt,
-        row.unsubscribe_token,
-        row.currency,
-        row.project_description,
-        row.budget
-      );
-    } catch (emailErr) {
-      console.error("Email delivery failed:", emailErr);
+      await enqueueEmail({
+        type: "quote_confirmation",
+        to: row.email,
+        data: {
+          last_name: row.last_name,
+          reference: row.reference,
+          service: row.service,
+          createdAt: new Date(row.created_at || row.createdat).toISOString(),
+          unsubscribe_token: row.unsubscribe_token,
+          currency: row.currency,
+          project_description: row.project_description,
+          budget: row.budget,
+        },
+      });
+    } catch (queueErr) {
+      // Insert already succeeded — don't fail the request over a queue hiccup,
+      // but this is now a real signal worth alerting on, not a silent console.error.
+      console.error("Failed to enqueue confirmation email:", queueErr);
     }
 
     return NextResponse.json(

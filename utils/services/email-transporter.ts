@@ -1,37 +1,18 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export interface MailerConfig {
-  host: string;
-  port: number;
-  username: string;
-  password: string;
+  apiKey: string;
   defaultFromAddress: string;
 }
 
 export class EmailTransporter {
-  private transporter: nodemailer.Transporter;
+  private resend: Resend;
   private readonly DEFAULT_FROM = "Apex49 Digital Limited <info@apex49.co>";
+  private readonly fromAddress: string;
 
   constructor(config: MailerConfig) {
-    this.transporter = this.initializeTransporter(config);
-  }
-
-  private initializeTransporter(config: MailerConfig): nodemailer.Transporter {
-    return nodemailer.createTransport({
-      host: config.host,
-      port: config.port,
-      secure: false,
-      auth: {
-        user: config.username,
-        pass: config.password,
-      },
-      connectionTimeout: 5000,
-      greetingTimeout: 5000,
-      socketTimeout: 5000,
-      tls: {
-        rejectUnauthorized: false,
-      },
-    });
+    this.resend = new Resend(config.apiKey);
+    this.fromAddress = config.defaultFromAddress || this.DEFAULT_FROM;
   }
 
   async sendEmail(
@@ -40,16 +21,26 @@ export class EmailTransporter {
     htmlContent: string,
   ): Promise<void> {
     try {
-      const emailPromises = recipients.map((recipient) =>
-        this.transporter.sendMail({
-          from: this.DEFAULT_FROM,
+      const sendPromises = recipients.map((recipient) =>
+        this.resend.emails.send({
+          from: this.fromAddress,
           to: recipient,
           subject,
           html: htmlContent,
         }),
       );
 
-      await Promise.all(emailPromises);
+      const results = await Promise.all(sendPromises);
+
+      // Resend returns { data, error } per call rather than throwing —
+      // check for per-recipient errors so a partial failure isn't silently swallowed.
+      const failures = results.filter((r) => r.error);
+      if (failures.length > 0) {
+        throw new Error(
+          `Resend rejected ${failures.length}/${recipients.length} email(s): ` +
+          failures.map((f) => f.error?.message).join("; ")
+        );
+      }
     } catch (error) {
       console.error("Failed to send email:", error);
       throw new Error("Email delivery failed");
@@ -57,11 +48,13 @@ export class EmailTransporter {
   }
 
   async verifyConnection(): Promise<boolean> {
+    // Resend has no SMTP-style "verify" handshake — the closest equivalent
+    // is confirming the API key is valid by hitting a lightweight authenticated endpoint.
     try {
-      await this.transporter.verify();
-      return true;
+      const { error } = await this.resend.domains.list();
+      return !error;
     } catch (error) {
-      console.error("SMTP connection verification failed:", error);
+      console.error("Resend API key verification failed:", error);
       return false;
     }
   }

@@ -25,10 +25,7 @@ export class EmailService {
 }
 
 const emailService = new EmailService({
-	host: process.env.NEXT_SMTP_HOST!,
-	port: parseInt(process.env.NEXT_SMTP_PORT || '2525'),
-	username: process.env.NETX_MAILTRAP_SMTP_USERNAME!,
-	password: process.env.NEXT_MAILTRAP_SMTP_PASSWORD!,
+	apiKey: process.env.NEXT_PUBLIC_RESEND_KEY || "",
 	defaultFromAddress: process.env.NEXT_FROM_EMAIL_ADDRESS!,
 });
 

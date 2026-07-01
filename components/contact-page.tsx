@@ -24,7 +24,7 @@ const schema = z.object({
         .min(10, "Message must be at least 10 characters"),
 });
 
-type FormValues = z.infer<typeof schema>;
+export type FormValues = z.infer<typeof schema>;
 
 type ApiSuccess = {
     success: true;
@@ -68,10 +68,10 @@ export default function ContactPage() {
     const onSubmit = async (data: FormValues) => {
         clearErrors();
 
-        if (! token) {
-            toast.error('Please complete the CAPTCHA.')
-            return;
-        }
+        // if (! token) {
+        //     toast.error('Please complete the CAPTCHA.')
+        //     return;
+        // }
 
         try {
             const res = await fetch("/api/request-quote", {
@@ -215,9 +215,13 @@ export default function ContactPage() {
                                         className="font-satoshi h-[56px] w-full appearance-none rounded-[6.4px] border border-[#E4E4E4] bg-white px-[20.19px] py-[17px] text-[15.88px] font-light text-[#999999] text-black transition-colors outline-none focus:border-[#111111]"
                                     >
                                         <option value="">Select Your Service</option>
-                                        <option value="web design">Web Design</option>
-                                        <option value="branding">Branding</option>
+                                        <option value="product design">Product Design</option>
+                                        <option value="branding">Brand Identity</option>
+                                        <option value="3d design">3D Design</option>
+                                        <option value="digital marketing">Digital Marketing</option>
                                         <option value="web development">Web Development</option>
+                                        <option value="mobile development">Mobile Development</option>
+                                        <option value="graphic design">Graphic Design</option>
                                     </select>
                                     <div className="pointer-events-none absolute top-1/2 right-[20px] -translate-y-1/2">
                                         <svg

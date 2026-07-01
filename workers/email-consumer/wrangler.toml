@@ -1,0 +1,16 @@
+name = "email-consumer"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+
+[[queues.consumers]]
+queue = "email-queue"
+max_batch_size = 10
+max_batch_timeout = 5
+max_retries = 3
+dead_letter_queue = "email-queue-dlq"
+
+# Secrets (set via `wrangler secret put` — never in this file):
+#   SMTP_USERNAME
+#   SMTP_PASSWORD
+#   SUPABASE_URL
+#   SUPABASE_SERVICE_ROLE_KEY

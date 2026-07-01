@@ -1,0 +1,9 @@
+{
+  "name": "email-consumer",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "deploy": "wrangler deploy --config wrangler.toml",
+    "dev": "wrangler dev --config wrangler.toml"
+  }
+}

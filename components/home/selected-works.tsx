@@ -120,15 +120,15 @@ export function SelectedWorks() {
                 </span>
 
                 <div>
-                    <h2 className="font-adamina text-[60px] leading-[77px] whitespace-nowrap text-[#191919]">
+                    <h2 className="font-adamina text-[40px] md:text-[60px] leading-[77px] whitespace-nowrap text-[#191919]">
                         Selected Works
                     </h2>
                 </div>
 
-                <div className="mx-auto w-full max-w-[1328px] px-6 lg:px-0">
+                <div className="mx-auto w-full max-w-[1328px] lg:px-0">
                     <div className="flex flex-col lg:flex-row lg:items-start lg:gap-[368px]">
                         <div className="w-full pb-[18.34px] lg:w-[640px]">
-                            <h2 className="font-body text-[39.84px] leading-[52px] font-normal tracking-tight text-[#191919]">
+                            <h2 className="font-body text-[30px] md:text-[39.84px] leading-[45px] md:leading-[52px] font-normal md:tracking-tight text-[#191919]">
                                 With Apex 49, your goals aren&apos;t just realized –
                                 they&apos;re reimagined with strong designs and
                                 visuals.
