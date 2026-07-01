@@ -9,6 +9,9 @@ max_batch_timeout = 5
 max_retries = 3
 dead_letter_queue = "email-queue-dlq"
 
+[vars]
+NEXT_PUBLIC_APP_URL = "https://apex49.co"
+
 # Secrets (set via `wrangler secret put` — never in this file):
 #   SMTP_USERNAME
 #   SMTP_PASSWORD

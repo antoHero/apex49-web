@@ -7,7 +7,10 @@ import { Env } from "./index";
 export async function dispatchEmail(env: Env, job: EmailJobType) {
   switch (job.type) {
     case "quote_confirmation": {
-      const handler = createQuoteEmailHandler({ RESEND_API_KEY: env.RESEND_API_KEY });
+      const handler = createQuoteEmailHandler({ 
+        RESEND_API_KEY: env.RESEND_API_KEY,
+        NEXT_PUBLIC_APP_URL: env.NEXT_PUBLIC_APP_URL || "https://apex49.co",
+      });
 
       await handler.sendConfirmationEmail(
         job.to,

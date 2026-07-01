@@ -2,7 +2,10 @@ import { EmailTransporter } from "@/utils/services/email-transporter";
 import { EmailTemplate } from "../templates/quote";
 
 export class RequestQuoteHandler {
-  constructor(private transporter: EmailTransporter) {}
+  constructor(
+    private transporter: EmailTransporter,
+    private appUrl: string,
+  ) {}
 
   async sendConfirmationEmail(
     email: string,
@@ -15,8 +18,10 @@ export class RequestQuoteHandler {
     project_description?: string | null,
     budget?: string | null,
   ): Promise<void> {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://apex49.co";
+
+    const baseUrl = this.appUrl || "https://apex49.co";
     const unsubscribeUrl = `${baseUrl}/unsubscribe?token=${unsubscribeToken}&email=${encodeURIComponent(email)}`;
+
 
     const parsedDate = createdAt ? new Date(createdAt) : new Date();
     const formattedDate = isNaN(parsedDate.getTime())
@@ -108,11 +113,11 @@ export class RequestQuoteHandler {
   }
 }
 
-export function createQuoteEmailHandler(env: { RESEND_API_KEY: string }) {
+export function createQuoteEmailHandler(env: { RESEND_API_KEY: string; NEXT_PUBLIC_APP_URL: string }) {
   const transporter = new EmailTransporter({
     apiKey: env.RESEND_API_KEY,
     defaultFromAddress: "Apex49 Digital Limited <info@apex49.co>",
   });
 
-  return new RequestQuoteHandler(transporter);
+  return new RequestQuoteHandler(transporter, env.NEXT_PUBLIC_APP_URL);
 }

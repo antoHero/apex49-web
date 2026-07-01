@@ -7,6 +7,7 @@ export interface Env {
   RESEND_API_KEY: string;
   SUPABASE_URL: string;
   SUPABASE_SECRET_KEY: string;
+  NEXT_PUBLIC_APP_URL: string;
 }
 
 const emailConsumer: ExportedHandler<Env> = {
