@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import type { Variants } from "motion/react";
+import Image from "next/image";
 
 
 const ArrowLeft = () => (
@@ -80,23 +81,27 @@ interface TestimonialData {
   text: string;
   author: string;
   role: string;
+  image?: React.ReactNode;
 }
 
 const testimonials: TestimonialData[] = [
   {
-    text: "Our design expertise spans UX/UI best practices, mobile-responsive layouts, and conversion-optimized interfaces, ensuring your digital touchpoints captivate and convert",
-    author: "Phill Butler",
-    role: "Director, Umbrella Group",
+    text: "We wanted a website that reflected the creativity and professionalism of our architectural practice, and the result was outstanding. The design showcases our portfolio beautifully while maintaining a clean, modern aesthetic that aligns with our brand. Navigation is intuitive, the site performs flawlessly across devices, and we've received numerous compliments from clients and partners. They truly understood our vision and translated it into an exceptional digital presence.",
+    author: "Akinwale Thompson",
+    role: "Principal Architect, Poddex Associates",
+    image: <Image src="/images/podex.jpeg" alt="Akinwale Thompson" width={100} height={100} className="rounded-full" />,
   },
   {
-    text: "The team at Apex 49 completely transformed our digital presence. Their attention to detail and commitment to engineering excellence is unmatched in the industry today.",
-    author: "Sarah Chen",
-    role: "CTO, Vortex Systems",
+    text: "The team delivered far more than a website they built an entire digital experience for our business.  Our mechanics can now track jobs, manage customer records, and update repair statuses seamlessly, while customers enjoy a smooth booking experience. The professionalism, attention to detail, and quality of the final product exceeded our expectations.",
+    author: "Agoro Teyi",
+    role: "Founder, Mechanic On The Go",
+    image: <Image src="/images/mech-on-go.jpeg" alt="Agoro Teyi" width={100} height={100} className="rounded-full" />,
   },
   {
-    text: "We needed a partner who could understand complex technology and translate it into a simple user interface. Apex 49 delivered exactly that and more.",
-    author: "Marcus Thorne",
-    role: "Founder, Echo Software",
+    text: "Working with Apex 49 has been an exceptional experience; their insight, professional advice, and outstanding quality of work have been pivotal as they continue to build our events and ticketing platform. Even with the project ongoing, their highly capable and professional team consistently delivers top-tier results, making them an easy partner to recommend.",
+    author: "Akintunde Shittu",
+    role: "Co-Founder, The Venndor",
+    image: <Image src="/images/venndor.png" alt="Akintunde Shittu" width={100} height={100} className="rounded-full" />,
   },
 ];
 
@@ -264,7 +269,8 @@ export default function Testimonials() {
               </p>
 
               <div className="flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-[18px]">
-                <UmbrellaLogo />
+                {/* <UmbrellaLogo /> */}
+                {testimonials[current].image}
                 <div className="hidden h-[1px] w-[64px] rotate-[-90deg] bg-[#191919] md:block" />
                 <div className="flex flex-col gap-1 md:gap-[12px]">
                   <span className="font-body text-[22px] leading-[1] font-black text-[#191919]">
